@@ -1,4 +1,4 @@
-import AbstractObjectModel from "./AbstractObjectModel"
+import AbstractObjectModel from "../3-service/AbstractObjectModel"
 
 /**
  * The Abstract API Class that all the other API classes inherit from
