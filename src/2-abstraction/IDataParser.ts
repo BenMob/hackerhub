@@ -16,7 +16,7 @@ interface IDataParser{
      * It can either be enums DataFormat.JSON or DataFormat.XML
      * @param format 
      */
-    setDataFormat(format: DataFormat): void
+    configureParserTo(format:DataFormat): void
 }
 
 export default IDataParser 
