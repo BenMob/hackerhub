@@ -25,7 +25,7 @@ abstract class AbstractObjectModel extends Object{
     /**
      * Returns trues this specific Objec has a builder Object 
      */
-    public abstract hadBuilder(): boolean;
+    public abstract hasBuilder(): boolean;
 }
 
 export default AbstractObjectModel;
