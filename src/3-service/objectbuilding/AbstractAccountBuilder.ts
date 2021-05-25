@@ -10,7 +10,7 @@ abstract class AbstractAccountBuilder implements IObjectModelBuilder{
     /*
      * The data to build the Object from 
      */
-    private data: Object | undefined;
+    protected data: Object | undefined;
 
     /*
      * The built Object after all the methids involved in the building process have 
