@@ -3,13 +3,17 @@ import IObjectModel from "./IObjectModel";
 /**
  * The Interface for all the builder Objects
  */
-interface IObjectModelBuider{
+interface IObjectModelBuilder{
     /**
      * defines the 
      * @param data JS Object data
      */
-    from(data:Object): this
-    getResult(): IObjectModel
+    from(data:Object): IObjectModelBuilder
+
+    /**
+     * Returns the built Object
+     */
+    buildObjectModel(): IObjectModel | undefined
 }
 
-export default IObjectModelBuider;
+export default IObjectModelBuilder;
