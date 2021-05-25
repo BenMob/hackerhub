@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+# Hackerhub
+
+This is a web application that allows users to view statistical information about a github account given a username.
+
+## System Design
+
+![System Design](./docs/system-design.png)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
