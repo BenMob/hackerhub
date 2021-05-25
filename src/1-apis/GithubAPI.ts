@@ -1,5 +1,5 @@
 import AbstractAPI from "../2-abstraction/AbstractAPI";
-import AbstractObjectModel from "../3-service/AbstractObjectModel";
+import AbstractObjectModel from "../3-service/objectmodeling/AbstractObjectModel";
 
 class GitHubAPI extends AbstractAPI{
     protected post(endpoint: String | undefined, params: Object): String {
