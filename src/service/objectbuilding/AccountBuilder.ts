@@ -2,7 +2,7 @@
  * This class is in charge of building an Account object 
  */
 
-import IObjectModelBuilder from "../../2-abstraction/IObjectModelBuilder";
+import IObjectModelBuilder from "../../abstraction/IObjectModelBuilder";
 import AbstractAccountBuilder from "./AbstractAccountBuilder";
 
 class AccountBuilder extends AbstractAccountBuilder{

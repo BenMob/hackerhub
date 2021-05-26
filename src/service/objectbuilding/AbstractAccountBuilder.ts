@@ -2,8 +2,8 @@
  * Account Object Builder
  */
 
-import IObjectModel from "../../2-abstraction/IObjectModel";
-import IObjectModelBuilder from "../../2-abstraction/IObjectModelBuilder";
+import IObjectModel from "../../abstraction/IObjectModel";
+import IObjectModelBuilder from "../../abstraction/IObjectModelBuilder";
 
 abstract class AbstractAccountBuilder implements IObjectModelBuilder{
     

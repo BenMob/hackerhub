@@ -1,4 +1,4 @@
-import HackerHub from "./0-presentation/HackerHub"
+import HackerHub from "./presentation/HackerHub"
 /**
  * The regular App Component
  * @returns 

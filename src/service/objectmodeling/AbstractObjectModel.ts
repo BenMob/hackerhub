@@ -1,4 +1,4 @@
-import IObjectModel from "../../2-abstraction/IObjectModel";
+import IObjectModel from "../../abstraction/IObjectModel";
 import {v4 as uuid } from "uuid"
 
 /**

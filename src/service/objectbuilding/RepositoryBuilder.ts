@@ -2,7 +2,7 @@
  * This class is in charge of building a repository object
  */
 
-import IObjectModelBuilder from "../../2-abstraction/IObjectModelBuilder";
+import IObjectModelBuilder from "../../abstraction/IObjectModelBuilder";
 import AbstractRepositoryBuilder from "./AbstractRepositoryBuilder";
 
 class RepositoryBuilder extends AbstractRepositoryBuilder{

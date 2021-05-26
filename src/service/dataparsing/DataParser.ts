@@ -1,4 +1,4 @@
-import IDataParser from "../../2-abstraction/IDataParser";
+import IDataParser from "../../abstraction/IDataParser";
 import AbstractDataFormat from "./AbstractDataFormat"
 import DataFormat from "./DataFormat";
 import JSONData from "./JSONData";

@@ -2,7 +2,7 @@
  * Data parser interface
  */
 
-import DataFormat from "../3-service/dataparsing/DataFormat";
+import DataFormat from "../service/dataparsing/DataFormat";
 
 interface IDataParser{
     /**
