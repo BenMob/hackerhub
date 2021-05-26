@@ -19,31 +19,29 @@ class RepoStats extends AbstractStats{
      * Setters 
      */
     public setSize(size: number): RepoStats{
-        this.setSize(size);
+        this.size = size;
         return this;
     }
 
-    public setOpenIssueCount(size: number): RepoStats{
-        this.setOpenIssueCount(size);
+    public setOpenIssueCount(count: number): RepoStats{
+        this.openIssueCount = count;
         return this;
     }
 
-    public setWatcherCount(size: number): RepoStats{
-        this.setWatcherCount(size);
+    public setWatcherCount(count: number): RepoStats{
+        this.watcherCount = count;
         return this;
     }
 
-    public setForkCount(size: number): RepoStats{
-        this.setForkCount(size);
+    public setForkCount(count: number): RepoStats{
+        this.forkCount = count;
         return this;
     }
 
-    public setLanguageCount(size: number): RepoStats{
-        this.setLanguageCount(size);
+    public setLanguageCount(count: number): RepoStats{
+        this.languageCount = count;
         return this;
     }
-
-
 
     /**
      * Getters

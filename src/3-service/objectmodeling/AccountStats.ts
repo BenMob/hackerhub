@@ -19,30 +19,29 @@ class AccountStats extends AbstractStats{
      * Setters 
      */
     public setPublicRepoCount(count: number): AccountStats{
-        this.setPublicRepoCount(count);
+        this.publicRepoCount = count;
         return this;
     }
 
     public setPublicGistCount(count: number): AccountStats{
-        this.setPublicGistCount(count);
+        this.publicGistCount = count;
         return this;
     }
 
     public setFollowerCount(count: number): AccountStats{
-        this.setFollowerCount(count);
+        this.followerCount = count;
         return this;
     }
 
     public setFollowingCount(count: number): AccountStats{
-        this.setFollowingCount(count);
+        this.followingCount = count;
         return this;
     }
 
     public setRepositoryCount(count: number): AccountStats{
-        this.setRepositoryCount(count);
+        this.repositoryCount = count;
         return this
     }
-
 
     /*
      * Getters 
