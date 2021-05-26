@@ -62,9 +62,11 @@ class Repository extends AbstractObjectModel{
         return this.websiteURL
     }
 
-
+    /**
+     * Returns trues this specific Objec has a builder Object 
+     */
     public hasBuilder(): boolean {
-        throw new Error("Method not implemented.");
+        return true;
     }
     
 }
