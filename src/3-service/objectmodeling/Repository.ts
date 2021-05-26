@@ -3,13 +3,16 @@
  */
 
 import AbstractObjectModel from "./AbstractObjectModel";
+import AbstractStats from "./AbstractStats";
 
 class Repository extends AbstractObjectModel{
-    private owner: String | undefined
-    private name: String | undefined
-    private description: String | undefined
-    private url: String | undefined
-    private websiteURL: String | undefined
+    private owner: String | undefined;
+    private name: String | undefined;
+    private description: String | undefined;
+    private url: String | undefined;
+    private websiteURL: String | undefined;
+    private languages: Array<AbstractObjectModel> | undefined;
+    private repoStats: AbstractStats | undefined;
 
     /*
      * Setters 
@@ -39,6 +42,16 @@ class Repository extends AbstractObjectModel{
         return this;
     }
 
+    public setLanguages(languages: Array<AbstractObjectModel>): Repository{
+        this.languages = languages;
+        return this;
+    }
+
+    public setRepoStats(stats: AbstractStats): Repository{
+        this.repoStats = stats;
+        return this;
+    }
+
     /*
      * Getters  
      */
@@ -60,6 +73,14 @@ class Repository extends AbstractObjectModel{
 
     public getWebsiteUrl(): String | undefined{
         return this.websiteURL
+    }
+
+    public getLanguages(): Array<AbstractObjectModel> | undefined{
+        return this.languages;
+    }
+
+    public getRepoStats(): AbstractStats | undefined{
+        return this.repoStats;
     }
 
     /**
