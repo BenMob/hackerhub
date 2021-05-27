@@ -6,5 +6,13 @@
   "company": "CompanyXYZ",
   "blogURL": "ben.com",
   "createdAt": "2019-05-11T05:14:45Z",
-  "updatedAt": "2021-05-26T06:26:54Z"
+  "updatedAt": "2021-05-26T06:26:54Z",
+  "accountStats": {
+        "id": "craziestidintheworldforaccountstats",
+        "publicRepoCount": 12,
+        "publicGistCount": 33,
+        "followerCount": 26,
+        "followingCount": 1,
+        "ownerId": "craziestidintheworld"
+    }
 }

@@ -3,7 +3,9 @@
  */
 
 import Account from "../../../../service/objectmodeling/Account";
-import testData from "../../../testdata/service/objectmodeling/account.json"
+import AccountStats from "../../../../service/objectmodeling/AccountStats";
+import testData from "../../../testdata/service/objectmodeling/account.json";
+import _ from "lodash";
 
 /**
  * Object to be tested
@@ -64,6 +66,18 @@ describe("Account.ts Test", () => {
     test("Testing getBlogURL() and setBlogURL()", () => {
         account?.setBlogURL(testData.blogURL);
         expect(account?.getBlogURL()).toBe(testData.blogURL);
+    })
+
+    test("Testing setAccountStats() and getAccountStats()", () => {
+        const accounStats: AccountStats = new AccountStats();
+        accounStats.setPublicRepoCount(testData.accountStats.publicRepoCount)
+        .setPublicGistCount(testData.accountStats.publicGistCount)
+        .setFollowerCount(testData.accountStats.followerCount)
+        .setFollowingCount(testData.accountStats.followingCount)
+        .setOwnerId(account?.getId()!);
+
+        account?.setAccountStats(accounStats);
+        expect(_.isEqual(account?.getAccountStats(), accounStats)).toBeTruthy();
     })
 });
 
