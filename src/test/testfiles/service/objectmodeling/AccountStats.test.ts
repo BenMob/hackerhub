@@ -37,6 +37,11 @@ describe("AccountStats Test", () => {
         expect(accountStats?.getId()).toBe(testData.id);
     })
 
+    test("Testing setOwnerId() and getOwnerId()", () => {
+        accountStats?.setOwnerId(testData.ownerId);
+        expect(accountStats?.getOwnerId()).toBe(testData.ownerId);
+    })
+
     test("Testing hasBuilder()", () => {
         expect(accountStats?.hasBuilder()).toBeFalsy()
     })
@@ -59,11 +64,6 @@ describe("AccountStats Test", () => {
     test("Testing setFollowingCount() and getFollowingCount()", () => {
         accountStats?.setFollowingCount(testData.followingCount);
         expect(accountStats?.getFollowingCount()).toBe(testData.followingCount);
-    })
-
-    test("Testing setOwnerId() and getOwnerId()", () => {
-        accountStats?.setOwnerId(testData.ownerId);
-        expect(accountStats?.getOwnerId()).toBe(testData.ownerId);
     })
 })
 
