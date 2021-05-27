@@ -7,7 +7,8 @@ import {v4 as uuid } from "uuid"
 abstract class AbstractObjectModel extends Object implements IObjectModel{
     private id: String | undefined = undefined;
 
-    public AbstractObjectModel(){
+    constructor(){
+        super()
         this.id = uuid();
     }
 
@@ -31,7 +32,7 @@ abstract class AbstractObjectModel extends Object implements IObjectModel{
      * Returns true if this Object has 
      */
     public hasId(): boolean{
-        return (this.id == undefined);
+        return (this.id != undefined);
     }
 
     /**
