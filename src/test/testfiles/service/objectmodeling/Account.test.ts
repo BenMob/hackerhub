@@ -27,6 +27,16 @@ afterAll(() => {
  * Account.ts Test suit
  */
 describe("Account.ts Test", () => {
+    test("Testing constructor", () => {
+        expect(account?.getId()).toBeDefined();
+        expect(account?.hasId()).toBeTruthy();
+    })
+
+    test("Testing setId() and getId()", () =>{
+        account?.setId(testData.id);
+        expect(account?.getId()).toBe(testData.id);
+    })
+
     test("Testing getUsername() and setUsername()", () => {
         account?.setUsername(testData.username);
         expect(account?.getUsername()).toBe(testData.username);
@@ -50,6 +60,10 @@ describe("Account.ts Test", () => {
     test("Testing getBlogURL() and setBlogURL()", () => {
         account?.setBlogURL(testData.blogURL);
         expect(account?.getBlogURL()).toBe(testData.blogURL);
+    })
+
+    test("Testing hasBuilder()", () => {
+        expect(account?.hasBuilder()).toBeTruthy()
     })
 
 });
