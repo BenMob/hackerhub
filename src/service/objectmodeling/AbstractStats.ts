@@ -8,7 +8,7 @@ abstract class AbstractStats extends AbstractObjectModel{
     protected ownerId : String | undefined
 
     /**
-     * 
+     * Sets the id of the owner of thos stats Object
      * @param id Sets the id of the owner of this Object
      */
     public setOwnerId(id: String): void{

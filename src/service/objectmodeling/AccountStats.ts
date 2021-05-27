@@ -13,7 +13,13 @@ class AccountStats extends AbstractStats{
     private publicGistCount: number | undefined;
     private followerCount: number | undefined;
     private followingCount: number | undefined;
-    private repositoryCount: number | undefined; 
+
+    /**
+     * Constructor
+     */
+    constructor(){
+        super()
+    }
 
     /**
      * Setters 
@@ -38,11 +44,6 @@ class AccountStats extends AbstractStats{
         return this;
     }
 
-    public setRepositoryCount(count: number): AccountStats{
-        this.repositoryCount = count;
-        return this
-    }
-
     /*
      * Getters 
      */
@@ -60,10 +61,6 @@ class AccountStats extends AbstractStats{
 
     public getFollowingCount(){
         return this.followingCount;
-    }
-
-    public getRepositoryCount(){
-        return this.repositoryCount;
     }
 
     /**
