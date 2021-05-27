@@ -11,6 +11,9 @@ class Repository extends AbstractObjectModel{
     private description: String | undefined;
     private url: String | undefined;
     private websiteURL: String | undefined;
+    private createdAt: Date | undefined
+    private pushedAt: Date | undefined
+    private updatedAt: Date | undefined
     private languages: Array<AbstractObjectModel> | undefined;
     private repoStats: AbstractStats | undefined;
 
@@ -39,6 +42,21 @@ class Repository extends AbstractObjectModel{
 
     public setWebSiteURL(url: String): Repository{
         this.websiteURL = url;
+        return this;
+    }
+
+    public setCreationDate(date: Date): Repository{
+        this.createdAt = date;
+        return this;
+    }
+
+    public setUpdatedDate(date: Date): Repository{
+        this.updatedAt = date;
+        return this;
+    }
+
+    public setPushedDate(date: Date): Repository{
+        this.pushedAt = date;
         return this;
     }
 
@@ -73,6 +91,18 @@ class Repository extends AbstractObjectModel{
 
     public getWebsiteUrl(): String | undefined{
         return this.websiteURL
+    }
+
+    public getCreationDate(): Date | undefined{
+        return this.createdAt;
+    }
+
+    public getUpdatedDate(): Date | undefined{
+        return this.updatedAt;
+    }
+
+    public getPushedDate(): Date | undefined{
+        return this.pushedAt;
     }
 
     public getLanguages(): Array<AbstractObjectModel> | undefined{
