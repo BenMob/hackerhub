@@ -15,8 +15,8 @@ class Account extends AbstractObjectModel{
     private avatarUrl: String | undefined;
     private company: String | undefined;
     private blogURl: String | undefined;
-    private dateCreated: Date | undefined;
-    private lastUpdated: Date | undefined;
+    private createdAt: Date | undefined;
+    private updatedAt: Date | undefined;
     private accountStats: AbstractStats | undefined;
     private publicRepos: Array<AbstractObjectModel> | undefined;
 
@@ -44,11 +44,11 @@ class Account extends AbstractObjectModel{
     }
 
     public getDateCreated(): Date | undefined{
-        return this.dateCreated;
+        return this.createdAt;
     }
 
     public getLastUpdated(): Date | undefined{
-        return this.lastUpdated;
+        return this.updatedAt;
     }
 
     public getAccountStats(): AbstractStats | undefined{
@@ -89,12 +89,12 @@ class Account extends AbstractObjectModel{
     }
 
     public setDateCreated(date: Date): Account{
-        this.dateCreated = date;
+        this.createdAt = date;
         return this;
     }
 
     public setLastUpdated(date: Date): Account{
-        this.lastUpdated = date;
+        this.updatedAt = date;
         return this;
     }
 
