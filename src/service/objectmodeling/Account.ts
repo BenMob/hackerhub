@@ -20,6 +20,13 @@ class Account extends AbstractObjectModel{
     private accountStats: AbstractStats | undefined;
     private publicRepos: Array<AbstractObjectModel> | undefined;
 
+    /**
+     * Constructor
+     */
+    constructor(){
+        super();
+    }
+
     /*
      *  Getters  
      */

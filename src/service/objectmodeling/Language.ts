@@ -13,7 +13,8 @@ class Language extends AbstractObjectModel{
     private lineCount: number | undefined
     private color: String | undefined
 
-    Language(name: String){
+    constructor(name: String){
+        super()
         this.name = name;
     }
 
@@ -60,7 +61,7 @@ class Language extends AbstractObjectModel{
      * Returns true if this object has a builder 
      */
     public hasBuilder(): boolean {
-        return true;
+        return false;
     }
 }
 
