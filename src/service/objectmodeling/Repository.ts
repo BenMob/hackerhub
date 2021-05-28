@@ -7,6 +7,7 @@ import AbstractStats from "./AbstractStats";
 
 class Repository extends AbstractObjectModel{
     private owner: String | undefined;
+    private ownerAvatarURL: String | undefined;
     private name: String | undefined;
     private description: String | undefined;
     private url: String | undefined;
@@ -22,6 +23,11 @@ class Repository extends AbstractObjectModel{
      */
     public setOwner(owner: String): Repository{
         this.owner = owner;
+        return this;
+    }
+
+    public setOwnerAvatarURL(avatarUrl: String): Repository{
+        this.ownerAvatarURL = avatarUrl;
         return this;
     }
 
@@ -75,6 +81,10 @@ class Repository extends AbstractObjectModel{
      */
     public getOwner(): String | undefined{
         return this.owner;
+    }
+
+    public getOwnerAvatarURL(): String | undefined{
+        return this.ownerAvatarURL;
     }
 
     public getName(): String | undefined{
