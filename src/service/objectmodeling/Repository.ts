@@ -124,7 +124,7 @@ class Repository extends AbstractObjectModel{
     }
 
     /**
-     * Returns trues this specific Objec has a builder Object 
+     * Returns trues this specific Object has a builder Object 
      */
     public hasBuilder(): boolean {
         return true;
