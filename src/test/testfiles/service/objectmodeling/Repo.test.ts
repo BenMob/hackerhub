@@ -1,78 +1,78 @@
 /**
- * Tests the Repository.ts class
+ * Tests the Repo.ts class
  */
 
 import Language from "../../../../service/objectmodeling/Language";
-import Repository from "../../../../service/objectmodeling/Repository";
-import testData from "../../../testdata/service/objectmodeling/repository.json";
+import Repo from "../../../../service/objectmodeling/Repo";
+import testData from "../../../testdata/service/objectmodeling/Repo.json";
 import _ from "lodash";
 import RepoStats from "../../../../service/objectmodeling/RepoStats";
 
 /**
  * Object to be tested
  */
-let repository: Repository | undefined;
+let repo: Repo | undefined;
 
 /**
  * Runs before each test
  */
 beforeEach(() => {
-    repository = new Repository();
+    repo = new Repo();
 })
 
 /** 
  * Runs after all the tests
  */
 afterAll(() => {
-    repository = undefined;
+    repo = undefined;
 })
 
 /**
- * Repository.ts test suite
+ * Repo.ts test suite
  */
-describe("Repository.ts Test", () => {
+describe("Repo.ts Test", () => {
     test("Testing constructor", () => {
-        expect(repository?.getId()).toBeDefined();
-        expect(repository?.hasId()).toBeTruthy();
+        expect(repo?.getId()).toBeDefined();
+        expect(repo?.hasId()).toBeTruthy();
     })
 
     test("Testing setId() and getId()", () =>{
-        repository?.setId(testData.id);
-        expect(repository?.getId()).toBe(testData.id);
+        repo?.setId(testData.id);
+        expect(repo?.getId()).toBe(testData.id);
     })
 
     test("Testing hasBuilder()", () => {
-        expect(repository?.hasBuilder()).toBeTruthy()
+        expect(repo?.hasBuilder()).toBeTruthy()
     })
     
     test("Testing setOwner() and getOwner()", () => {
-        repository?.setOwner(testData.owner);
-        expect(repository?.getOwner()).toBe(testData.owner);
+        repo?.setOwner(testData.owner);
+        expect(repo?.getOwner()).toBe(testData.owner);
     })
 
     test("Testing setOwnerAvatarURL() and getOwnerAvatarURL()", () => {
-        repository?.setOwnerAvatarURL(testData.ownerAvatarURL);
-        expect(repository?.getOwnerAvatarURL()).toBe(testData.ownerAvatarURL);
+        repo?.setOwnerAvatarURL(testData.ownerAvatarURL);
+        expect(repo?.getOwnerAvatarURL()).toBe(testData.ownerAvatarURL);
     })
 
     test("Testing setName() and getName()", () => {
-        repository?.setName(testData.name);
-        expect(repository?.getName()).toBe(testData.name);
+        repo?.setName(testData.name);
+        expect(repo?.getName()).toBe(testData.name);
     })
 
     test("Testing setDescription() and getDescription()", () => {
-        repository?.setDescription(testData.description);
-        expect(repository?.getDescription()).toBe(testData.description);
+        repo?.setDescription(testData.description);
+        expect(repo?.getDescription()).toBe(testData.description);
     })
 
     test("Testing setURL() and getURL()", () => {
-        repository?.setURL(testData.url);
-        expect(repository?.getUrl()).toBe(testData.url);
+        repo?.setURL(testData.url);
+        expect(repo?.getUrl()).toBe(testData.url);
     })
 
     test("Testing setWebsiteURL() and getWebsiteURL()", () => {
-        repository?.setWebsiteURL(testData.websiteURL);
-        expect(repository?.getWebsiteUrl()).toBe(testData.websiteURL);       
+        repo?.setWebsiteURL(testData.websiteURL);
+        expect(repo?.getWebsiteUrl()).toBe(testData.websiteURL);       
     })
     
     test("Testing setCreatedAt() and getCreatedAt()", () => {
@@ -96,8 +96,8 @@ describe("Repository.ts Test", () => {
             return language;
         });
 
-        repository?.setLanguages(languages);
-        expect(_.isEqual(repository?.getLanguages(), languages)).toBeTruthy();
+        repo?.setLanguages(languages);
+        expect(_.isEqual(repo?.getLanguages(), languages)).toBeTruthy();
     })
 
     test("Testing setRepoStats() and getReposStats()", () => {
@@ -108,8 +108,8 @@ describe("Repository.ts Test", () => {
         .setForkCount(testData.repoStats.forkCount)
         .setLanguageCount(testData.repoStats.languageCount);
 
-        repository?.setRepoStats(repoStats);
-        expect(_.isEqual(repository?.getRepoStats(), repoStats)).toBeTruthy();
+        repo?.setRepoStats(repoStats);
+        expect(_.isEqual(repo?.getRepoStats(), repoStats)).toBeTruthy();
     })
 })
 

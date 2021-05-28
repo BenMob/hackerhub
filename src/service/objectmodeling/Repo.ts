@@ -1,11 +1,11 @@
 /**
- * This is the repository class
+ * This is the Repo class
  */
 
 import AbstractObjectModel from "./AbstractObjectModel";
 import AbstractStats from "./AbstractStats";
 
-class Repository extends AbstractObjectModel{
+class Repo extends AbstractObjectModel{
     private owner: String | undefined;
     private ownerAvatarURL: String | undefined;
     private name: String | undefined;
@@ -21,57 +21,57 @@ class Repository extends AbstractObjectModel{
     /*
      * Setters 
      */
-    public setOwner(owner: String): Repository{
+    public setOwner(owner: String): Repo{
         this.owner = owner;
         return this;
     }
 
-    public setOwnerAvatarURL(avatarUrl: String): Repository{
+    public setOwnerAvatarURL(avatarUrl: String): Repo{
         this.ownerAvatarURL = avatarUrl;
         return this;
     }
 
-    public setName(name : String): Repository{
+    public setName(name : String): Repo{
         this.name = name;
         return this;
     }
 
-    public setDescription(description: String): Repository{
+    public setDescription(description: String): Repo{
         this.description = description;
         return this;
     }
 
-    public setURL(url: String): Repository{
+    public setURL(url: String): Repo{
         this.url = url;
         return this;
     }
 
-    public setWebsiteURL(url: String): Repository{
+    public setWebsiteURL(url: String): Repo{
         this.websiteURL = url;
         return this;
     }
 
-    public setCreationDate(date: Date): Repository{
+    public setCreationDate(date: Date): Repo{
         this.createdAt = date;
         return this;
     }
 
-    public setUpdatedDate(date: Date): Repository{
+    public setUpdatedDate(date: Date): Repo{
         this.updatedAt = date;
         return this;
     }
 
-    public setPushedDate(date: Date): Repository{
+    public setPushedDate(date: Date): Repo{
         this.pushedAt = date;
         return this;
     }
 
-    public setLanguages(languages: Array<AbstractObjectModel>): Repository{
+    public setLanguages(languages: Array<AbstractObjectModel>): Repo{
         this.languages = languages;
         return this;
     }
 
-    public setRepoStats(stats: AbstractStats): Repository{
+    public setRepoStats(stats: AbstractStats): Repo{
         this.repoStats = stats;
         return this;
     }
@@ -132,4 +132,4 @@ class Repository extends AbstractObjectModel{
     
 }
 
-export default Repository
+export default Repo
