@@ -46,7 +46,7 @@ class Repository extends AbstractObjectModel{
         return this;
     }
 
-    public setWebSiteURL(url: String): Repository{
+    public setWebsiteURL(url: String): Repository{
         this.websiteURL = url;
         return this;
     }
