@@ -4,6 +4,7 @@
 
 import AbstractObjectModel from "./AbstractObjectModel";
 import AbstractStats from "./AbstractStats";
+import DateObject from "./DateObject";
 
 class Repo extends AbstractObjectModel{
     private owner: String | undefined;
@@ -12,9 +13,9 @@ class Repo extends AbstractObjectModel{
     private description: String | undefined;
     private url: String | undefined;
     private websiteURL: String | undefined;
-    private createdAt: Date | undefined
-    private pushedAt: Date | undefined
-    private updatedAt: Date | undefined
+    private createdAt: AbstractObjectModel | undefined
+    private pushedAt: AbstractObjectModel | undefined
+    private updatedAt: AbstractObjectModel | undefined
     private languages: Array<AbstractObjectModel> | undefined;
     private repoStats: AbstractStats | undefined;
 
@@ -51,18 +52,30 @@ class Repo extends AbstractObjectModel{
         return this;
     }
 
-    public setCreationDate(date: Date): Repo{
-        this.createdAt = date;
+    public setCreationDate(date: string | DateObject): Repo{
+        if(typeof date == "string"){
+            this.createdAt = new DateObject(date);
+        }else if(date instanceof DateObject){
+            this.createdAt = date;
+        }
         return this;
     }
 
-    public setUpdatedDate(date: Date): Repo{
-        this.updatedAt = date;
+    public setLastUpdateDate(date: string | DateObject): Repo{
+        if(typeof date == "string"){
+            this.updatedAt = new DateObject(date);
+        }else if(date instanceof DateObject){
+            this.updatedAt = date;
+        }
         return this;
     }
 
-    public setPushedDate(date: Date): Repo{
-        this.pushedAt = date;
+    public setPushDate(date: string | DateObject): Repo{
+        if(typeof date == "string"){
+            this.pushedAt = new DateObject(date);
+        }else if(date instanceof DateObject){
+            this.pushedAt = date;
+        }
         return this;
     }
 
@@ -103,15 +116,15 @@ class Repo extends AbstractObjectModel{
         return this.websiteURL
     }
 
-    public getCreationDate(): Date | undefined{
+    public getCreationDate(): AbstractObjectModel | undefined{
         return this.createdAt;
     }
 
-    public getUpdatedDate(): Date | undefined{
+    public getLastUpdateDate(): AbstractObjectModel | undefined{
         return this.updatedAt;
     }
 
-    public getPushedDate(): Date | undefined{
+    public getPushDate(): AbstractObjectModel | undefined{
         return this.pushedAt;
     }
 
