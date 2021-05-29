@@ -1,6 +1,6 @@
 {
   "id": "craziestidintheworld", 
-  "username": "BenMob",
+  "username": "BenOwner",
   "userFullName": "Benjamin Ombeni",
   "avatarUrl": "https://avatars.githubusercontent.com/u/50510398?v=4",
   "company": "CompanyXYZ",
@@ -14,5 +14,91 @@
         "followerCount": 26,
         "followingCount": 1,
         "ownerId": "craziestidintheworld"
+  },
+  "publicRepos": [
+        {
+        "id": "funnyrepoid",
+        "owner": "BenOwner",
+        "ownerAvatarURL": "https://avatars.githubusercontent.com/u/50510398?v=4",
+        "name": "hackerhub",
+        "description": "An app where all the hackers are found",
+        "url": "https://github.com/ben/hackerhub",
+        "websiteURL": "https://hackerhub.site",
+        "createdAt": "2019-05-11T05:14:45Z",
+        "pushedAt": "2019-05-11T07:16:45Z",
+        "updatedAt": "2021-05-26T06:26:54Z",
+        "languages":[
+            {
+                "id": "craziestidintheworld",
+                "name": "Typescript",
+                "lineCount": 30,
+                "color":"#2b7489"
+            },
+            {
+                "id": "craziestidintheworld-2",
+                "name": "CSS",
+                "lineCount": 65,
+                "color":"#b2011d"
+                
+            },
+            {
+                "id": "craziestidintheworld-3",
+                "name": "Javascript",
+                "lineCount": 56,
+                "color":"#f1e05a"
+            }
+        ],
+        "repoStats": {
+            "id": "perfectid",
+            "size": 334,
+            "openIssueCount": 2,
+            "watcherCount": 3,
+            "forkCount": 1,
+            "languageCount": 3,
+            "ownerId": "craziestidintheworld"
+        }
+    },
+    {
+        "id": "funnyrepoid2",
+        "owner": "BenOwner",
+        "ownerAvatarURL": "https://avatars.githubusercontent.com/u/50510398?v=4",
+        "name": "MipsConverter",
+        "description": "A web app that converts mips instructions into binary",
+        "url": "https://github.com/ben/mipsconverter",
+        "websiteURL": "https://mipsconverter.site",
+        "createdAt": "2019-01-12T05:16:42Z",
+        "pushedAt": "2019-05-11T06:14:45Z",
+        "updatedAt": "2021-04-22T06:21:54Z",
+        "languages":[
+            {
+                "id": "craziestid1",
+                "name": "Typescript",
+                "lineCount": 30,
+                "color":"#2b7489"
+            },
+            {
+                "id": "craziestid2",
+                "name": "CSS",
+                "lineCount": 65,
+                "color":"#b2011d"
+                
+            },
+            {
+                "id": "craziestid3",
+                "name": "Javascript",
+                "lineCount": 56,
+                "color":"#f1e05a"
+            }
+        ],
+        "repoStats": {
+            "id": "perfectstatsid",
+            "size": 334,
+            "openIssueCount": 2,
+            "watcherCount": 3,
+            "forkCount": 1,
+            "languageCount": 3,
+            "ownerId": "craziestidintheworld"
+        }
     }
+  ] 
 }
