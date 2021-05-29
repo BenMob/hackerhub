@@ -7,6 +7,7 @@ import Repo from "../../../../service/objectmodeling/Repo";
 import testData from "../../../testdata/service/objectmodeling/Repo.json";
 import _ from "lodash";
 import RepoStats from "../../../../service/objectmodeling/RepoStats";
+import DateObject from "../../../../service/objectmodeling/DateObject";
 
 /**
  * Object to be tested
@@ -75,16 +76,74 @@ describe("Repo.ts Test", () => {
         expect(repo?.getWebsiteUrl()).toBe(testData.websiteURL);       
     })
     
-    test("Testing setCreatedAt() and getCreatedAt()", () => {
-        // TODO : Implement this
+    test("Testing setCreationDate() and getCreationDate()", () => {
+
+        // Test with Date String as input
+        repo?.setCreationDate(testData.createdAt.input);
+        let createdAt : DateObject | undefined = repo?.getCreationDate() as DateObject;
+        expect(createdAt.getYear()).toBe(testData.createdAt.expectedYear);
+        expect(createdAt.getMonth()).toBe(testData.createdAt.expectedMonth);
+        expect(createdAt.getHours()).toBe(testData.createdAt.expectedHours);
+        expect(createdAt.getMinutes()).toBe(testData.createdAt.expectedMinutes);
+        expect(createdAt.getSeconds()).toBe(testData.createdAt.expectedSeconds);
+
+        // Reinitialize the repo Object
+        repo = new Repo();
+
+        // Test with DateObject as input
+        repo?.setCreationDate(new DateObject(testData.createdAt.input));
+        createdAt = repo?.getCreationDate() as DateObject;
+        expect(createdAt.getYear()).toBe(testData.createdAt.expectedYear);
+        expect(createdAt.getMonth()).toBe(testData.createdAt.expectedMonth);
+        expect(createdAt.getHours()).toBe(testData.createdAt.expectedHours);
+        expect(createdAt.getMinutes()).toBe(testData.createdAt.expectedMinutes);
+        expect(createdAt.getSeconds()).toBe(testData.createdAt.expectedSeconds);
     })
 
-    test("Testing setPushedAt() and getPushedAt()", () => {
-         // TODO : Implement this
+    test("Testing setPushDate() and getPushDate()", () => {
+          // Test with Date String as input
+        repo?.setPushDate(testData.pushedAt.input);
+        let pushedAt : DateObject | undefined = repo?.getPushDate() as DateObject;
+        expect(pushedAt.getYear()).toBe(testData.pushedAt.expectedYear);
+        expect(pushedAt.getMonth()).toBe(testData.pushedAt.expectedMonth);
+        expect(pushedAt.getHours()).toBe(testData.pushedAt.expectedHours);
+        expect(pushedAt.getMinutes()).toBe(testData.pushedAt.expectedMinutes);
+        expect(pushedAt.getSeconds()).toBe(testData.pushedAt.expectedSeconds);
+
+        // Reinitialize the repo Object
+        repo = new Repo();
+
+        // Test with DateObject as input
+        repo?.setPushDate(new DateObject(testData.pushedAt.input));
+        pushedAt = repo?.getPushDate() as DateObject;
+        expect(pushedAt.getYear()).toBe(testData.pushedAt.expectedYear);
+        expect(pushedAt.getMonth()).toBe(testData.pushedAt.expectedMonth);
+        expect(pushedAt.getHours()).toBe(testData.pushedAt.expectedHours);
+        expect(pushedAt.getMinutes()).toBe(testData.pushedAt.expectedMinutes);
+        expect(pushedAt.getSeconds()).toBe(testData.pushedAt.expectedSeconds);
     })
 
-    test("Testing setUpdatedAt() and getUpdatedAt()", () => {
-         // TODO : Implement this
+    test("Testing setLastUpdateDate() and getLastUpdateDate()", () => {
+        // Test with Date String as input
+        repo?.setLastUpdateDate(testData.updatedAt.input);
+        let updatedAt : DateObject | undefined = repo?.getLastUpdateDate() as DateObject;
+        expect(updatedAt.getYear()).toBe(testData.updatedAt.expectedYear);
+        expect(updatedAt.getMonth()).toBe(testData.updatedAt.expectedMonth);
+        expect(updatedAt.getHours()).toBe(testData.updatedAt.expectedHours);
+        expect(updatedAt.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
+        expect(updatedAt.getSeconds()).toBe(testData.updatedAt.expectedSeconds);
+        
+        // Reinitialize the repo Object
+        repo = new Repo();
+
+        // Test with DateObject as input
+        repo?.setLastUpdateDate(new DateObject(testData.updatedAt.input));
+        updatedAt = repo?.getLastUpdateDate() as DateObject;
+        expect(updatedAt.getYear()).toBe(testData.updatedAt.expectedYear);
+        expect(updatedAt.getMonth()).toBe(testData.updatedAt.expectedMonth);
+        expect(updatedAt.getHours()).toBe(testData.updatedAt.expectedHours);
+        expect(updatedAt.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
+        expect(updatedAt.getSeconds()).toBe(testData.updatedAt.expectedSeconds);
     })
 
     test("Testing setLanguages() and getLanguages()", () => {
@@ -102,11 +161,13 @@ describe("Repo.ts Test", () => {
 
     test("Testing setRepoStats() and getReposStats()", () => {
         const repoStats : RepoStats = new RepoStats();
+        repoStats.setId(testData.id);
         repoStats.setSize(testData.repoStats.size)
         .setOpenIssueCount(testData.repoStats.openIssueCount)
         .setWatcherCount(testData.repoStats.watcherCount)
         .setForkCount(testData.repoStats.forkCount)
-        .setLanguageCount(testData.repoStats.languageCount);
+        .setLanguageCount(testData.repoStats.languageCount)
+        .setOwnerId(repo?.getId()!);
 
         repo?.setRepoStats(repoStats);
         expect(_.isEqual(repo?.getRepoStats(), repoStats)).toBeTruthy();

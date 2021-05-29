@@ -6,6 +6,9 @@ import Account from "../../../../service/objectmodeling/Account";
 import AccountStats from "../../../../service/objectmodeling/AccountStats";
 import testData from "../../../testdata/service/objectmodeling/account.json";
 import _ from "lodash";
+import Repo from "../../../../service/objectmodeling/Repo";
+import Language from "../../../../service/objectmodeling/Language";
+import RepoStats from "../../../../service/objectmodeling/RepoStats";
 
 /**
  * Object to be tested
@@ -70,14 +73,60 @@ describe("Account.ts Test", () => {
 
     test("Testing setAccountStats() and getAccountStats()", () => {
         const accounStats: AccountStats = new AccountStats();
+        accounStats.setId(testData.accountStats.id);
         accounStats.setPublicRepoCount(testData.accountStats.publicRepoCount)
         .setPublicGistCount(testData.accountStats.publicGistCount)
         .setFollowerCount(testData.accountStats.followerCount)
         .setFollowingCount(testData.accountStats.followingCount)
         .setOwnerId(account?.getId()!);
-
+        
         account?.setAccountStats(accounStats);
         expect(_.isEqual(account?.getAccountStats(), accounStats)).toBeTruthy();
+    })
+
+    test("Testing setPublicRepos() and getPublicRepos()", () => {
+        const publicRepos: Array<Repo> = testData.publicRepos.map(repoObject => {
+
+            // Creates Languages Array
+            const languages: Array<Language> = repoObject.languages.map(languageObject => {
+
+                // Creates single nlanguage Object
+                const language: Language = new Language(languageObject.name);
+                language.setId(languageObject.id);
+                language.setLineCount(languageObject.lineCount)
+                language.setColor(languageObject.color);
+                return language;
+            })
+
+            // Creating AccountStats Object
+            const repoStats: RepoStats = new RepoStats();
+            repoStats.setSize(repoObject.repoStats.size)
+            .setOpenIssueCount(repoObject.repoStats.openIssueCount)
+            .setWatcherCount(repoObject.repoStats.watcherCount)
+            .setForkCount(repoObject.repoStats.forkCount)
+            .setLanguageCount(repoObject.repoStats.languageCount)
+            .setOwnerId(repoObject.repoStats.ownerId);
+
+            // Creating the repo
+            const repo = new Repo();
+            repo.setId(repoObject.id)
+            repo.setOwner(repoObject.owner)
+            .setOwnerAvatarURL(repoObject.ownerAvatarURL)
+            .setName(repoObject.name)
+            .setDescription(repoObject.description)
+            .setURL(repoObject.url)
+            .setWebsiteURL(repoObject.websiteURL)
+            
+            /**
+             * TODO: Add Dates here
+             */
+            repo.setLanguages(languages)
+            .setRepoStats(repoStats);
+            
+            return repo;
+        })
+
+        expect(_.isEqual(account?.getPublicRepos(), publicRepos));
     })
 });
 
