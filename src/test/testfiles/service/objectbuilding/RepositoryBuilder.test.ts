@@ -33,57 +33,66 @@ afterEach(() => {
  */
 describe("RepositoryBuilder.ts Test", () => {
     test("Testing from() and buildObjectModel()", () => {
+        
+        // Build Repo Object
         const repo: Repo | undefined = repositoryBuilder?.from(testData).buildObjectModel() as Repo;
 
+        // Tests the basic information
         expect(repo.hasBuilder()).toBeTruthy();
         expect(repo.hasId()).toBeTruthy();
         expect(repo.getId()).toBeDefined();
-        expect(repo.getOwner()).toBe(testData.owner);
-        expect(repo.getOwnerAvatarURL()).toBe(testData.ownerAvatarURL);
+        expect(repo.getOwner()).toBe(testData.owner.id);
+        expect(repo.getOwnerAvatarURL()).toBe(testData.owner.avatar_url);
         expect(repo.getName()).toBe(testData.name);
         expect(repo.getDescription()).toBe(testData.description);
-        expect(repo.getWebsiteUrl()).toBe(testData.url);
+        expect(repo.getUrl()).toBe(testData.html_url);
+        expect(repo.getWebsiteUrl()).toBe(testData.homepage);
 
+        // Tests the creation date
         const createdAt : DateObject | undefined = repo.getCreationDate();
-        expect(createdAt?.getYear()).toBe(testData.createdAt.expectedYear);
-        expect(createdAt?.getMonth()).toBe(testData.createdAt.expectedMonth);
-        expect(createdAt?.getDay()).toBe(testData.createdAt.expectedDay);
-        expect(createdAt?.getHours()).toBe(testData.createdAt.expectedHours);
-        expect(createdAt?.getMinutes()).toBe(testData.createdAt.expectedMinutes);
-        expect(createdAt?.getSeconds()).toBe(testData.createdAt.expectedSeconds);
+        const expectedCreationDate : DateObject | undefined = new DateObject(testData.created_at);
+        expect(createdAt?.getYear()).toBe(expectedCreationDate.getYear());
+        expect(createdAt?.getMonth()).toBe(expectedCreationDate.getMonth());
+        expect(createdAt?.getDay()).toBe(expectedCreationDate.getDay());
+        expect(createdAt?.getHours()).toBe(expectedCreationDate.getHours());
+        expect(createdAt?.getMinutes()).toBe(expectedCreationDate.getMinutes());
+        expect(createdAt?.getSeconds()).toBe(expectedCreationDate.getSeconds());
 
+        // Tests the pushed date
         const pushedAt: DateObject | undefined = repo.getPushDate();
-        expect(pushedAt?.getYear()).toBe(testData.pushedAt.expectedYear);
-        expect(pushedAt?.getMonth()).toBe(testData.pushedAt.expectedMonth);
-        expect(pushedAt?.getDay()).toBe(testData.pushedAt.expectedDay);
-        expect(pushedAt?.getHours()).toBe(testData.pushedAt.expectedHours);
-        expect(pushedAt?.getMinutes()).toBe(testData.pushedAt.expectedMinutes);
-        expect(pushedAt?.getSeconds()).toBe(testData.pushedAt.expectedSeconds);
+        const expectedPushDate: DateObject | undefined = new DateObject(testData.pushed_at);
+        expect(pushedAt?.getYear()).toBe(expectedPushDate.getYear());
+        expect(pushedAt?.getMonth()).toBe(expectedPushDate.getMonth());
+        expect(pushedAt?.getDay()).toBe(expectedPushDate.getDay());
+        expect(pushedAt?.getHours()).toBe(expectedPushDate.getHours());
+        expect(pushedAt?.getMinutes()).toBe(expectedPushDate.getMinutes());
+        expect(pushedAt?.getSeconds()).toBe(expectedPushDate.getSeconds());
         
+        // Tests the update date
         const updatedAt: DateObject | undefined = repo.getLastUpdateDate();
-        expect(updatedAt?.getYear()).toBe(testData.updatedAt.expectedYear);
-        expect(updatedAt?.getMonth()).toBe(testData.updatedAt.expectedMonth);
-        expect(updatedAt?.getDay()).toBe(testData.updatedAt.expectedDay);
-        expect(updatedAt?.getHours()).toBe(testData.updatedAt.expectedHours);
-        expect(updatedAt?.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
-        expect(updatedAt?.getSeconds()).toBe(testData.updatedAt.expectedSeconds);
+        const expectedUpdateDate: DateObject | undefined = new DateObject(testData.updated_at);
+        expect(updatedAt?.getYear()).toBe(expectedUpdateDate.getYear());
+        expect(updatedAt?.getMonth()).toBe(expectedUpdateDate.getMonth());
+        expect(updatedAt?.getDay()).toBe(expectedUpdateDate.getDay());
+        expect(updatedAt?.getHours()).toBe(expectedUpdateDate.getHours());
+        expect(updatedAt?.getMinutes()).toBe(expectedUpdateDate.getMinutes());
+        expect(updatedAt?.getSeconds()).toBe(expectedUpdateDate.getSeconds());
 
+        // Tests languages
         const languages: Array<Language> | undefined = repo.getLanguages(); 
         expect(languages![0].getName()).toBe(testData.languages[0].name);
         expect(languages![0].getLineCount()).toBe(testData.languages[0].lineCount);
-        expect(languages![0].getColor()).toBe(testData.languages[0].color);
         expect(languages![1].getName()).toBe(testData.languages[1].name);
         expect(languages![1].getLineCount()).toBe(testData.languages[1].lineCount);
-        expect(languages![1].getColor()).toBe(testData.languages[1].color);
         expect(languages![2].getName()).toBe(testData.languages[2].name);
         expect(languages![2].getLineCount()).toBe(testData.languages[2].lineCount);
-        expect(languages![2].getColor()).toBe(testData.languages[2].color);
 
+        // Test RepoStats
         const repoStats: RepoStats | undefined = repo.getRepoStats();
-        expect(repoStats?.getSize()).toBe(testData.repoStats.size);
-        expect(repoStats?.getOpenIssueCount()).toBe(testData.repoStats.openIssueCount);
-        expect(repoStats?.getWatcherCount()).toBe(testData.repoStats.watcherCount);
-        expect(repoStats?.getForkCount()).toBe(testData.repoStats.forkCount);
+        expect(repoStats?.getSize()).toBe(testData.size);
+        expect(repoStats?.getOpenIssueCount()).toBe(testData.open_issues_count);
+        expect(repoStats?.getWatcherCount()).toBe(testData.watchers_count);
+        expect(repoStats?.getForkCount()).toBe(testData.forks_count);
         expect(repoStats?.getLanguageCount()).toBe(languages?.length);
         expect(repoStats?.getOwnerId()).toBe(repo.getId());
     })
