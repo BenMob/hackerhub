@@ -9,6 +9,7 @@ import _ from "lodash";
 import Repo from "../../../../service/objectmodeling/Repo";
 import Language from "../../../../service/objectmodeling/Language";
 import RepoStats from "../../../../service/objectmodeling/RepoStats";
+import DateObject from "../../../../service/objectmodeling/DateObject";
 
 /**
  * Object to be tested
@@ -71,6 +72,56 @@ describe("Account.ts Test", () => {
         expect(account?.getBlogURL()).toBe(testData.blogURL);
     })
 
+    test("Testing getCreationDate() and setCreationDate()",  () => {
+        // Test with Date String as input
+        account?.setCreationDate(testData.createdAt.input);
+        let createdAt : DateObject | undefined = account?.getCreationDate() as DateObject;
+        expect(createdAt.getYear()).toBe(testData.createdAt.expectedYear);
+        expect(createdAt.getMonth()).toBe(testData.createdAt.expectedMonth);
+        expect(createdAt.getDay()).toBe(testData.createdAt.expectedDay);
+        expect(createdAt.getHours()).toBe(testData.createdAt.expectedHours);
+        expect(createdAt.getMinutes()).toBe(testData.createdAt.expectedMinutes);
+        expect(createdAt.getSeconds()).toBe(testData.createdAt.expectedSeconds);
+
+        // Reinitialize the account Object
+        account = new Account();
+
+        // Test with DateObject as input
+        account?.setCreationDate(new DateObject(testData.createdAt.input));
+        createdAt = account?.getCreationDate() as DateObject;
+        expect(createdAt.getYear()).toBe(testData.createdAt.expectedYear);
+        expect(createdAt.getMonth()).toBe(testData.createdAt.expectedMonth);
+        expect(createdAt.getDay()).toBe(testData.createdAt.expectedDay);
+        expect(createdAt.getHours()).toBe(testData.createdAt.expectedHours);
+        expect(createdAt.getMinutes()).toBe(testData.createdAt.expectedMinutes);
+        expect(createdAt.getSeconds()).toBe(testData.createdAt.expectedSeconds);
+    })
+
+    test("Testing getLastUpdateDate() and setLastUpdateDate()",  () => {
+        // Test with Date String as input
+        account?.setLastUpdateDate(testData.updatedAt.input);
+        let updatedAt : DateObject | undefined = account?.getLastUpdateDate() as DateObject;
+        expect(updatedAt.getYear()).toBe(testData.updatedAt.expectedYear);
+        expect(updatedAt.getMonth()).toBe(testData.updatedAt.expectedMonth);
+        expect(updatedAt.getDay()).toBe(testData.updatedAt.expectedDay);
+        expect(updatedAt.getHours()).toBe(testData.updatedAt.expectedHours);
+        expect(updatedAt.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
+        expect(updatedAt.getSeconds()).toBe(testData.updatedAt.expectedSeconds);
+
+        // Reinitialize the account Object
+        account = new Account();
+
+        // Test with DateObject as input
+        account?.setLastUpdateDate(new DateObject(testData.updatedAt.input));
+        updatedAt = account?.getLastUpdateDate() as DateObject;
+        expect(updatedAt.getYear()).toBe(testData.updatedAt.expectedYear);
+        expect(updatedAt.getMonth()).toBe(testData.updatedAt.expectedMonth);
+        expect(updatedAt.getDay()).toBe(testData.updatedAt.expectedDay);
+        expect(updatedAt.getHours()).toBe(testData.updatedAt.expectedHours);
+        expect(updatedAt.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
+        expect(updatedAt.getSeconds()).toBe(testData.updatedAt.expectedSeconds);
+    })
+
     test("Testing setAccountStats() and getAccountStats()", () => {
         const accounStats: AccountStats = new AccountStats();
         accounStats.setId(testData.accountStats.id);
@@ -116,17 +167,20 @@ describe("Account.ts Test", () => {
             .setDescription(repoObject.description)
             .setURL(repoObject.url)
             .setWebsiteURL(repoObject.websiteURL)
-            
-            /**
-             * TODO: Add Dates here
-             */
-            repo.setLanguages(languages)
+            .setCreationDate(repoObject.createdAt)
+            .setPushDate(repoObject.pushedAt)
+            .setLastUpdateDate(repoObject.updatedAt)
+            .setLanguages(languages)
             .setRepoStats(repoStats);
             
             return repo;
         })
 
-        expect(_.isEqual(account?.getPublicRepos(), publicRepos));
+        // Setting the publicRepos
+        account?.setPublicRepos(publicRepos);
+
+        expect(account?.getPublicRepos()![0].getId()).toBe(testData.publicRepos[0].id);
+        expect(account?.getPublicRepos()![1].getId()).toBe(testData.publicRepos[1].id);
     })
 });
 

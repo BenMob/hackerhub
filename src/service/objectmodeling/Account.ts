@@ -4,6 +4,7 @@
 
 import AbstractObjectModel from "./AbstractObjectModel";
 import AbstractStats from "./AbstractStats";
+import DateObject from "./DateObject";
 
 class Account extends AbstractObjectModel{
 
@@ -15,8 +16,8 @@ class Account extends AbstractObjectModel{
     private avatarUrl: String | undefined;
     private company: String | undefined;
     private blogURl: String | undefined;
-    private createdAt: Date | undefined;
-    private updatedAt: Date | undefined;
+    private createdAt: AbstractObjectModel | undefined;
+    private updatedAt: AbstractObjectModel | undefined;
     private accountStats: AbstractStats | undefined;
     private publicRepos: Array<AbstractObjectModel> | undefined;
 
@@ -50,11 +51,11 @@ class Account extends AbstractObjectModel{
         return this.blogURl;
     }
 
-    public getDateCreated(): Date | undefined{
+    public getCreationDate(): AbstractObjectModel | undefined{
         return this.createdAt;
     }
 
-    public getLastUpdated(): Date | undefined{
+    public getLastUpdateDate(): AbstractObjectModel | undefined{
         return this.updatedAt;
     }
 
@@ -95,13 +96,13 @@ class Account extends AbstractObjectModel{
         return this;
     }
 
-    public setDateCreated(date: Date): Account{
-        this.createdAt = date;
+    public setCreationDate(date: string | DateObject): Account{
+        this.createdAt = (typeof date == "string")? new DateObject(date): date;
         return this;
     }
 
-    public setLastUpdated(date: Date): Account{
-        this.updatedAt = date;
+    public setLastUpdateDate(date: string | DateObject): Account{
+        this.updatedAt = (typeof date == "string")? new DateObject(date): date;
         return this;
     }
 

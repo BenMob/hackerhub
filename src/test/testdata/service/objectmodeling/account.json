@@ -5,8 +5,24 @@
   "avatarUrl": "https://avatars.githubusercontent.com/u/50510398?v=4",
   "company": "CompanyXYZ",
   "blogURL": "ben.com",
-  "createdAt": "2019-05-11T05:14:45Z",
-  "updatedAt": "2021-05-26T06:26:54Z",
+  "createdAt": {
+      "input":"2019-05-11T05:14:45Z",
+      "expectedYear": 2019,
+      "expectedMonth": 5,
+      "expectedDay": 11,
+      "expectedHours": 5,
+      "expectedMinutes": 14,
+      "expectedSeconds": 45
+},
+  "updatedAt":{
+      "input":"2021-05-26T06:26:54Z",
+      "expectedYear": 2021,
+      "expectedMonth": 5,
+      "expectedDay": 26,
+      "expectedHours": 6,
+      "expectedMinutes": 26,
+      "expectedSeconds": 54      
+  },
   "accountStats": {
         "id": "craziestidintheworldforaccountstats",
         "publicRepoCount": 12,
@@ -24,9 +40,9 @@
         "description": "An app where all the hackers are found",
         "url": "https://github.com/ben/hackerhub",
         "websiteURL": "https://hackerhub.site",
-        "createdAt": "2019-05-11T05:14:45Z",
-        "pushedAt": "2019-05-11T07:16:45Z",
-        "updatedAt": "2021-05-26T06:26:54Z",
+        "createdAt": "2019-04-12T05:14:45Z",
+        "pushedAt": "2019-05-19T07:16:44Z",
+        "updatedAt": "2021-02-26T06:26:54Z",
         "languages":[
             {
                 "id": "craziestidintheworld",

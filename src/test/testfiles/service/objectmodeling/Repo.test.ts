@@ -83,6 +83,7 @@ describe("Repo.ts Test", () => {
         let createdAt : DateObject | undefined = repo?.getCreationDate() as DateObject;
         expect(createdAt.getYear()).toBe(testData.createdAt.expectedYear);
         expect(createdAt.getMonth()).toBe(testData.createdAt.expectedMonth);
+        expect(createdAt.getDay()).toBe(testData.createdAt.expectedDay);
         expect(createdAt.getHours()).toBe(testData.createdAt.expectedHours);
         expect(createdAt.getMinutes()).toBe(testData.createdAt.expectedMinutes);
         expect(createdAt.getSeconds()).toBe(testData.createdAt.expectedSeconds);
@@ -95,6 +96,7 @@ describe("Repo.ts Test", () => {
         createdAt = repo?.getCreationDate() as DateObject;
         expect(createdAt.getYear()).toBe(testData.createdAt.expectedYear);
         expect(createdAt.getMonth()).toBe(testData.createdAt.expectedMonth);
+        expect(createdAt.getDay()).toBe(testData.createdAt.expectedDay);
         expect(createdAt.getHours()).toBe(testData.createdAt.expectedHours);
         expect(createdAt.getMinutes()).toBe(testData.createdAt.expectedMinutes);
         expect(createdAt.getSeconds()).toBe(testData.createdAt.expectedSeconds);
@@ -106,6 +108,7 @@ describe("Repo.ts Test", () => {
         let pushedAt : DateObject | undefined = repo?.getPushDate() as DateObject;
         expect(pushedAt.getYear()).toBe(testData.pushedAt.expectedYear);
         expect(pushedAt.getMonth()).toBe(testData.pushedAt.expectedMonth);
+        expect(pushedAt.getDay()).toBe(testData.pushedAt.expectedDay);
         expect(pushedAt.getHours()).toBe(testData.pushedAt.expectedHours);
         expect(pushedAt.getMinutes()).toBe(testData.pushedAt.expectedMinutes);
         expect(pushedAt.getSeconds()).toBe(testData.pushedAt.expectedSeconds);
@@ -118,6 +121,7 @@ describe("Repo.ts Test", () => {
         pushedAt = repo?.getPushDate() as DateObject;
         expect(pushedAt.getYear()).toBe(testData.pushedAt.expectedYear);
         expect(pushedAt.getMonth()).toBe(testData.pushedAt.expectedMonth);
+        expect(pushedAt.getDay()).toBe(testData.pushedAt.expectedDay);
         expect(pushedAt.getHours()).toBe(testData.pushedAt.expectedHours);
         expect(pushedAt.getMinutes()).toBe(testData.pushedAt.expectedMinutes);
         expect(pushedAt.getSeconds()).toBe(testData.pushedAt.expectedSeconds);
@@ -129,6 +133,7 @@ describe("Repo.ts Test", () => {
         let updatedAt : DateObject | undefined = repo?.getLastUpdateDate() as DateObject;
         expect(updatedAt.getYear()).toBe(testData.updatedAt.expectedYear);
         expect(updatedAt.getMonth()).toBe(testData.updatedAt.expectedMonth);
+        expect(updatedAt.getDay()).toBe(testData.updatedAt.expectedDay);
         expect(updatedAt.getHours()).toBe(testData.updatedAt.expectedHours);
         expect(updatedAt.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
         expect(updatedAt.getSeconds()).toBe(testData.updatedAt.expectedSeconds);
@@ -141,6 +146,7 @@ describe("Repo.ts Test", () => {
         updatedAt = repo?.getLastUpdateDate() as DateObject;
         expect(updatedAt.getYear()).toBe(testData.updatedAt.expectedYear);
         expect(updatedAt.getMonth()).toBe(testData.updatedAt.expectedMonth);
+        expect(updatedAt.getDay()).toBe(testData.updatedAt.expectedDay);
         expect(updatedAt.getHours()).toBe(testData.updatedAt.expectedHours);
         expect(updatedAt.getMinutes()).toBe(testData.updatedAt.expectedMinutes);
         expect(updatedAt.getSeconds()).toBe(testData.updatedAt.expectedSeconds);

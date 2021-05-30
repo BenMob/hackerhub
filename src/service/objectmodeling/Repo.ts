@@ -53,29 +53,17 @@ class Repo extends AbstractObjectModel{
     }
 
     public setCreationDate(date: string | DateObject): Repo{
-        if(typeof date == "string"){
-            this.createdAt = new DateObject(date);
-        }else if(date instanceof DateObject){
-            this.createdAt = date;
-        }
+        this.createdAt = (typeof date == "string")? new DateObject(date): date;
         return this;
     }
 
     public setLastUpdateDate(date: string | DateObject): Repo{
-        if(typeof date == "string"){
-            this.updatedAt = new DateObject(date);
-        }else if(date instanceof DateObject){
-            this.updatedAt = date;
-        }
+        this.updatedAt = (typeof date == "string")? new DateObject(date): date;
         return this;
     }
 
     public setPushDate(date: string | DateObject): Repo{
-        if(typeof date == "string"){
-            this.pushedAt = new DateObject(date);
-        }else if(date instanceof DateObject){
-            this.pushedAt = date;
-        }
+        this.pushedAt = (typeof date == "string")? new DateObject(date): date;
         return this;
     }
 

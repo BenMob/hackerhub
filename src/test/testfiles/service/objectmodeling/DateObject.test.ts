@@ -13,7 +13,7 @@ let date : DateObject | undefined;
 /**
  * Runs before each test 
  */
-beforeAll(() => {
+beforeEach(() => {
     date = new DateObject(testData.dateString);
 })
 /** 
@@ -25,6 +25,11 @@ afterAll(() => {
 
 describe("DataObject.ts Test", () => {
     test("Testing constructor", () => {
+        expect(date?.getId()).toBeDefined();
+        expect(date?.hasId()).toBeTruthy();
+
+        // Reintitialize the date object
+        date = new DateObject();
         expect(date?.getId()).toBeDefined();
         expect(date?.hasId()).toBeTruthy();
     })
