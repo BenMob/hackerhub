@@ -44,11 +44,6 @@ describe("Language.ts Test", () => {
         language?.setLineCount(testData.lineCount);
         expect(language?.getLineCount()).toBe(testData.lineCount);
     })
-
-    test("Testing setColor() and getColor()", () => {
-        language?.setColor(testData.color);
-        expect(language?.getColor()).toBe(testData.color);
-    })
 });
 
 export{}

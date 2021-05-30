@@ -11,7 +11,6 @@ class Language extends AbstractObjectModel{
      */
     private name: String | undefined
     private lineCount: number | undefined
-    private color: String | undefined
 
     constructor(name: String){
         super()
@@ -27,14 +26,6 @@ class Language extends AbstractObjectModel{
     }
 
     /**
-     * Sets the color used to represent this language on the User Interface
-     * @param color 
-     */
-    public setColor(color: String): void {
-        this.color = color;
-    }
-
-    /**
      * 
      * @returns Gets the name of the language
      */
@@ -47,14 +38,6 @@ class Language extends AbstractObjectModel{
      */
     public getLineCount(): number | undefined{
         return this.lineCount;
-    }
-
-    /**
-     * Returns the color of that represents this language 
-     * @returns color
-     */
-    public getColor(): String | undefined{
-        return this.color;
     }
 
     /**
