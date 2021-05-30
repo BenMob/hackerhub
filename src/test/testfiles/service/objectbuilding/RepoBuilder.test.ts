@@ -2,23 +2,23 @@
  * Tests Repository Builder
  */
 
-import RepositoryBuilder from "../../../../service/objectbuilding/RepoBuilder";
+import RepoBuilder from "../../../../service/objectbuilding/RepoBuilder";
 import DateObject from "../../../../service/objectmodeling/DateObject";
 import Language from "../../../../service/objectmodeling/Language";
 import Repo from "../../../../service/objectmodeling/Repo";
 import RepoStats from "../../../../service/objectmodeling/RepoStats";
-import testData from "../../../testdata/service/objectbuilding/repositorybuilder.json";
+import testData from "../../../testdata/service/objectbuilding/repobuilder.json";
 
 /**
  * Object to be tested
  */
-let repositoryBuilder: RepositoryBuilder | undefined;
+let repositoryBuilder: RepoBuilder | undefined;
 
 /**
  * Runs before each test.
  */
 beforeEach(() => {
-    repositoryBuilder = new RepositoryBuilder();
+    repositoryBuilder = new RepoBuilder();
 })
 
 /**
@@ -29,7 +29,7 @@ afterEach(() => {
 })
 
 /**
- * RepositoryBuilder test Suite
+ * RepositoryBuilder test suite
  */
 describe("RepositoryBuilder.ts Test", () => {
     test("Testing from() and buildObjectModel()", () => {
