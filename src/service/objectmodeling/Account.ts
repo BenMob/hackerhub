@@ -51,12 +51,12 @@ class Account extends AbstractObjectModel{
         return this.blogURl;
     }
 
-    public getCreationDate(): AbstractObjectModel | undefined{
-        return this.createdAt;
+    public getCreationDate(): DateObject | undefined{
+        return this.createdAt as DateObject;
     }
 
-    public getLastUpdateDate(): AbstractObjectModel | undefined{
-        return this.updatedAt;
+    public getLastUpdateDate(): DateObject | undefined{
+        return this.updatedAt as DateObject;
     }
 
     public getAccountStats(): AbstractStats | undefined{
