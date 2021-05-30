@@ -3,9 +3,9 @@
  */
 
 import IObjectModelBuilder from "../../abstraction/IObjectModelBuilder";
-import AbstractRepositoryBuilder from "./AbstractRepositoryBuilder";
+import AbstractRepoBuilder from "./AbstractRepoBuilder";
 
-class RepositoryBuilder extends AbstractRepositoryBuilder{
+class RepoBuilder extends AbstractRepoBuilder{
     protected buildBasicInfo(): IObjectModelBuilder {
         throw new Error("Method not implemented.");
     }
@@ -17,4 +17,4 @@ class RepositoryBuilder extends AbstractRepositoryBuilder{
     }
 }
 
-export default RepositoryBuilder
+export default RepoBuilder;

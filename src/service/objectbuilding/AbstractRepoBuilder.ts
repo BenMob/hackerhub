@@ -5,7 +5,7 @@
 import IObjectModel from "../../abstraction/IObjectModel";
 import IObjectModelBuilder from "../../abstraction/IObjectModelBuilder";
 
-abstract class AbstractRepositoryBuilder implements IObjectModelBuilder{
+abstract class AbstractRepoBuilder implements IObjectModelBuilder{
     
     /*
      * The data to build the Object from 
@@ -50,4 +50,4 @@ abstract class AbstractRepositoryBuilder implements IObjectModelBuilder{
     protected abstract buildStats(): IObjectModelBuilder
 }
 
-export default AbstractRepositoryBuilder
+export default AbstractRepoBuilder;

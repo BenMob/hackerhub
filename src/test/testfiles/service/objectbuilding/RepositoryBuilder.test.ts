@@ -2,7 +2,7 @@
  * Tests Repository Builder
  */
 
-import RepositoryBuilder from "../../../../service/objectbuilding/RepositoryBuilder";
+import RepositoryBuilder from "../../../../service/objectbuilding/RepoBuilder";
 import DateObject from "../../../../service/objectmodeling/DateObject";
 import Language from "../../../../service/objectmodeling/Language";
 import Repo from "../../../../service/objectmodeling/Repo";
