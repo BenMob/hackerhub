@@ -23,7 +23,10 @@ afterAll(() => {
     date = undefined;
 })
 
-describe("DataObject.ts Test", () => {
+/**
+ * DateObject Test suite
+ */
+describe("DateObject.ts Test", () => {
     test("Testing constructor", () => {
         expect(date?.getId()).toBeDefined();
         expect(date?.hasId()).toBeTruthy();
