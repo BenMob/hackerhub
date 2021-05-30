@@ -145,7 +145,6 @@ describe("Account.ts Test", () => {
                 const language: Language = new Language(languageObject.name);
                 language.setId(languageObject.id);
                 language.setLineCount(languageObject.lineCount)
-                language.setColor(languageObject.color);
                 return language;
             })
 
