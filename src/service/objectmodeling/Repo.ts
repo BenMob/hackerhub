@@ -5,6 +5,8 @@
 import AbstractObjectModel from "./AbstractObjectModel";
 import AbstractStats from "./AbstractStats";
 import DateObject from "./DateObject";
+import Language from "./Language";
+import RepoStats from "./RepoStats";
 
 class Repo extends AbstractObjectModel{
     private owner: String | undefined;
@@ -104,24 +106,24 @@ class Repo extends AbstractObjectModel{
         return this.websiteURL
     }
 
-    public getCreationDate(): AbstractObjectModel | undefined{
-        return this.createdAt;
+    public getCreationDate(): DateObject | undefined{
+        return this.createdAt as DateObject;
     }
 
-    public getLastUpdateDate(): AbstractObjectModel | undefined{
-        return this.updatedAt;
+    public getLastUpdateDate(): DateObject | undefined{
+        return this.updatedAt as DateObject;
     }
 
-    public getPushDate(): AbstractObjectModel | undefined{
-        return this.pushedAt;
+    public getPushDate(): DateObject | undefined{
+        return this.pushedAt as DateObject;
     }
 
-    public getLanguages(): Array<AbstractObjectModel> | undefined{
-        return this.languages;
+    public getLanguages(): Array<Language> | undefined{
+        return this.languages as Array<Language>;
     }
 
-    public getRepoStats(): AbstractStats | undefined{
-        return this.repoStats;
+    public getRepoStats(): RepoStats | undefined{
+        return this.repoStats as RepoStats;
     }
 
     /**
