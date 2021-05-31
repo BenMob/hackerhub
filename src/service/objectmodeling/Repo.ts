@@ -71,6 +71,7 @@ class Repo extends AbstractObjectModel{
 
     public setLanguages(languages: Array<AbstractObjectModel>): Repo{
         this.languages = languages;
+
         return this;
     }
 

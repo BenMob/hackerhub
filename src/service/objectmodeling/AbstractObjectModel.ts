@@ -4,11 +4,10 @@ import {v4 as uuid } from "uuid"
 /**
  * This class is the Abstract class that all the Object Models will inherit from.
  */
-abstract class AbstractObjectModel extends Object implements IObjectModel{
+abstract class AbstractObjectModel implements IObjectModel{
     private id: String | undefined = undefined;
 
     constructor(){
-        super()
         this.id = uuid();
     }
 

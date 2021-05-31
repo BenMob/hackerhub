@@ -31,7 +31,7 @@ afterEach(() => {
 /**
  * RepositoryBuilder test suite
  */
-describe("RepositoryBuilder.ts Test", () => {
+describe("RepoBuilder.ts Test", () => {
     test("Testing from() and buildObjectModel()", () => {
         
         // Build Repo Object
@@ -41,7 +41,7 @@ describe("RepositoryBuilder.ts Test", () => {
         expect(repo.hasBuilder()).toBeTruthy();
         expect(repo.hasId()).toBeTruthy();
         expect(repo.getId()).toBeDefined();
-        expect(repo.getOwner()).toBe(testData.owner.id);
+        expect(repo.getOwner()).toBe(testData.owner.login);
         expect(repo.getOwnerAvatarURL()).toBe(testData.owner.avatar_url);
         expect(repo.getName()).toBe(testData.name);
         expect(repo.getDescription()).toBe(testData.description);
