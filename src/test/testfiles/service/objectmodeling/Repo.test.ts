@@ -4,7 +4,7 @@
 
 import Language from "../../../../service/objectmodeling/Language";
 import Repo from "../../../../service/objectmodeling/Repo";
-import testData from "../../../testdata/service/objectmodeling/Repo.json";
+import testData from "../../../testdata/service/objectmodeling/repo.json";
 import _ from "lodash";
 import RepoStats from "../../../../service/objectmodeling/RepoStats";
 import DateObject from "../../../../service/objectmodeling/DateObject";
