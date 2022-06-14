@@ -33,9 +33,9 @@ afterEach(() => {
 
 describe("AccountBuilder.ts Test", () => {
     test("Testing from() and buildObjectModel()", () => {
-/*
+
         // Build Account Object
-        const account: Account | undefined = accountBuilder?.from(testData).buildObjectModel() as Account;
+        const account: Account = accountBuilder?.from(testData).buildObjectModel() as Account;
 
         // Tests the basic information
         expect(account.hasBuilder()).toBeTruthy();
@@ -48,8 +48,8 @@ describe("AccountBuilder.ts Test", () => {
         expect(account.getBlogURL()).toBe(testData.blog);
 
         // Test the creation date
-        const createdAt: DateObject | undefined = account.getCreationDate();
-        const expectedCreationDate : DateObject | undefined = new DateObject(testData.created_at);
+        const createdAt: DateObject | null = account.getCreationDate();
+        const expectedCreationDate : DateObject = new DateObject(testData.created_at);
         expect(createdAt?.getYear()).toBe(expectedCreationDate.getYear());
         expect(createdAt?.getMonth()).toBe(expectedCreationDate.getMonth());
         expect(createdAt?.getDay()).toBe(expectedCreationDate.getDay());
@@ -58,8 +58,8 @@ describe("AccountBuilder.ts Test", () => {
         expect(createdAt?.getSeconds()).toBe(expectedCreationDate.getSeconds());
         
         // Tests the update date
-        const updatedAt: DateObject | undefined = account.getLastUpdateDate();
-        const expectedUpdateDate: DateObject | undefined = new DateObject(testData.updated_at);
+        const updatedAt: DateObject | null = account.getLastUpdateDate();
+        const expectedUpdateDate: DateObject = new DateObject(testData.updated_at);
         expect(updatedAt?.getYear()).toBe(expectedUpdateDate.getYear());
         expect(updatedAt?.getMonth()).toBe(expectedUpdateDate.getMonth());
         expect(updatedAt?.getDay()).toBe(expectedUpdateDate.getDay());
@@ -68,14 +68,14 @@ describe("AccountBuilder.ts Test", () => {
         expect(updatedAt?.getSeconds()).toBe(expectedUpdateDate.getSeconds());
 
         // Tests the Account stats
-        const accountStats: AccountStats | undefined = account.getAccountStats() as AccountStats;
+        const accountStats: AccountStats | null = account.getAccountStats() as AccountStats;
         expect(accountStats.getPublicRepoCount()).toBe(testData.public_repos);
         expect(accountStats.getPublicGistCount()).toBe(testData.public_gists);
         expect(accountStats.getFollowerCount()).toBe(testData.followers);
         expect(accountStats.getFollowingCount()).toBe(testData.following);
 
         // Tests repos
-        expect(account.getPublicRepos()).toBeDefined();*/
+        expect(account.getPublicRepos()).toBeDefined();
     })
 });
 

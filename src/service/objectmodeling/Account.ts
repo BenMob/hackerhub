@@ -11,15 +11,15 @@ class Account extends AbstractObjectModel{
     /*
      * Attributes
      */
-    private username: String | undefined;
-    private userFullName: String | undefined;
-    private avatarUrl: String | undefined;
-    private company: String | undefined;
-    private blogURl: String | undefined;
-    private createdAt: AbstractObjectModel | undefined;
-    private updatedAt: AbstractObjectModel | undefined;
-    private accountStats: AbstractStats | undefined;
-    private publicRepos: Array<AbstractObjectModel> | undefined;
+    private username: String | null = null;
+    private userFullName: String | null = null;
+    private avatarUrl: String | null = null;
+    private company: String | null = null;
+    private blogURl: String | null = null;
+    private createdAt: AbstractObjectModel | null = null;
+    private updatedAt: AbstractObjectModel | null = null;
+    private accountStats: AbstractStats | null = null;
+    private publicRepos: Array<AbstractObjectModel> | null = null;
 
     /**
      * Constructor
@@ -31,39 +31,39 @@ class Account extends AbstractObjectModel{
     /*
      *  Getters  
      */
-    public getUsername(): String | undefined{
+    public getUsername(): String | null{
         return this.username;
     }
 
-    public getUserFullName(): String | undefined{
+    public getUserFullName(): String | null{
         return this.userFullName;
     }
 
-    public getAvatarURL(): String | undefined{
+    public getAvatarURL(): String | null{
         return this.avatarUrl;
     }
 
-    public getCompany(): String | undefined{
+    public getCompany(): String | null{
         return this.company;
     }
 
-    public getBlogURL(): String | undefined{
+    public getBlogURL(): String | null{
         return this.blogURl;
     }
 
-    public getCreationDate(): DateObject | undefined{
+    public getCreationDate(): DateObject | null{
         return this.createdAt as DateObject;
     }
 
-    public getLastUpdateDate(): DateObject | undefined{
+    public getLastUpdateDate(): DateObject | null{
         return this.updatedAt as DateObject;
     }
 
-    public getAccountStats(): AbstractStats | undefined{
+    public getAccountStats(): AbstractStats | null{
         return this.accountStats;
     }
 
-    public getPublicRepos(): Array<AbstractObjectModel> | undefined{
+    public getPublicRepos(): Array<AbstractObjectModel> | null{
         return this.publicRepos;
     }
 

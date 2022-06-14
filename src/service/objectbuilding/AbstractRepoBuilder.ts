@@ -11,13 +11,13 @@ abstract class AbstractRepoBuilder implements IObjectModelBuilder{
     /*
      * The data to build the Object from 
      */
-    protected data: any | undefined;
+    protected data: any;
 
     /*
      * The built Object after all the methids involved in the building process have 
      * been called. 
      */
-    protected objectModel: Repo | undefined = undefined; 
+    protected objectModel: Repo = new Repo();
 
     /**
      * Defines the data from which the Object gets built
@@ -25,7 +25,6 @@ abstract class AbstractRepoBuilder implements IObjectModelBuilder{
      */
     public from(data: any): IObjectModelBuilder {
         this.data = data;
-        this.objectModel = new Repo();
         return this
     }
 

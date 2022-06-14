@@ -18,7 +18,7 @@ class RepoBuilder extends AbstractRepoBuilder{
      */
     protected buildBasicInfo(): AbstractRepoBuilder {
         
-        this.objectModel?.setOwner(this.data.owner.login)
+        this.objectModel.setOwner(this.data.owner.login)
         .setOwnerAvatarURL(this.data.owner.avatar_url)
         .setName(this.data.name)
         .setDescription(this.data.description)
@@ -33,7 +33,7 @@ class RepoBuilder extends AbstractRepoBuilder{
      * @returns this
      */
     protected buildCreationDate(): AbstractRepoBuilder {
-        this.objectModel?.setCreationDate(this.data.created_at);
+        this.objectModel.setCreationDate(this.data.created_at);
         return this;
     }
 
@@ -42,7 +42,7 @@ class RepoBuilder extends AbstractRepoBuilder{
      * @returns this
      */
     protected buildPushDate(): AbstractRepoBuilder {
-        this.objectModel?.setPushDate(this.data.pushed_at);
+        this.objectModel.setPushDate(this.data.pushed_at);
         return this;
     }
 
@@ -51,7 +51,7 @@ class RepoBuilder extends AbstractRepoBuilder{
      * @returns this
      */
     protected buildUpdateDate(): AbstractRepoBuilder {
-        this.objectModel?.setLastUpdateDate(this.data.updated_at);
+        this.objectModel.setLastUpdateDate(this.data.updated_at);
         return this;
     }
 
@@ -60,7 +60,7 @@ class RepoBuilder extends AbstractRepoBuilder{
      * @returns this
      */
     protected buildLanguages(): AbstractRepoBuilder {
-        this.objectModel?.setLanguages(this.data.languages.map((languageObject: { name: String; lineCount: number; }) => {
+        this.objectModel.setLanguages(this.data.languages.map((languageObject: { name: String; lineCount: number; }) => {
                 const language : Language = new Language(languageObject.name)
                 language.setLineCount(languageObject.lineCount);
                 return language;
@@ -74,7 +74,7 @@ class RepoBuilder extends AbstractRepoBuilder{
      */
     protected buildStats(): AbstractRepoBuilder {
         const repoStats: RepoStats = new RepoStats();
-        repoStats.setOwnerId(this.objectModel?.getId()!);
+        repoStats.setOwnerId(this.objectModel.getId()!);
         repoStats.setSize(this.data.size)
             .setWatcherCount(this.data.watchers_count)
             .setForkCount(this.data.forks_count)

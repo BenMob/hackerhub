@@ -9,10 +9,10 @@ class AccountStats extends AbstractStats{
     /*
      * Attributes
      */
-    private publicRepoCount: number | undefined;
-    private publicGistCount: number | undefined;
-    private followerCount: number | undefined;
-    private followingCount: number | undefined;
+    private publicRepoCount: number | null = null;
+    private publicGistCount: number | null = null;
+    private followerCount: number | null = null;
+    private followingCount: number | null = null;
 
     /**
      * Constructor
@@ -47,15 +47,15 @@ class AccountStats extends AbstractStats{
     /*
      * Getters 
      */
-    public getPublicRepoCount(): number  | undefined{
+    public getPublicRepoCount(): number  | null{
         return this.publicRepoCount;
     }
 
-    public getPublicGistCount(): number | undefined{
+    public getPublicGistCount(): number | null{
         return this.publicGistCount;
     }
 
-    public getFollowerCount(): number | undefined{
+    public getFollowerCount(): number | null{
         return this.followerCount;
     }
 
