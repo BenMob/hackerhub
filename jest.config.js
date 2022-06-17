@@ -8,7 +8,12 @@ module.exports = {
     },
   },
   setupFilesAfterEnv: ['./src/jest.setup.ts'],
-  "transformIgnorePatterns": [
-    "node_modules/(?!date-time)/"
-  ]
-};
+  "coverageThreshold": {
+    "global": {
+      "branches": 95,
+      "functions": 100,
+      "lines": 100,
+      "statements": 100
+    }
+  }
+}

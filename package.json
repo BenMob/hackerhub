@@ -7,7 +7,8 @@
     "webpack": "webpack",
     "start": "webpack-dev-server --config webpack.config.js --open",
     "test": "jest",
-    "coverage": "npm test -- --coverage"
+    "test:ci": "jest --coverage --silent --ci",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
