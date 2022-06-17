@@ -1,4 +1,5 @@
 {
+  "homepage":"http://benmob.github.io/hackerhub",
   "name": "hackerhub",
   "version": "1.0.0",
   "description": "",
@@ -6,9 +7,12 @@
   "scripts": {
     "webpack": "webpack",
     "start": "webpack-dev-server --config webpack.config.js --open",
+    "build": "webpack --config webpack.config.js",
     "test": "jest",
     "test:ci": "jest --coverage --silent --ci",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +38,7 @@
     "css-loader": "^6.7.1",
     "eslint-plugin-react": "^7.30.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "image-webpack-loader": "^8.1.0",
     "jest": "^28.1.1",

@@ -79,9 +79,9 @@ class RepoBuilder extends AbstractRepoBuilder{
             .setWatcherCount(this.data.watchers_count)
             .setForkCount(this.data.forks_count)
             .setOpenIssueCount(this.data.open_issues_count)
-            .setLanguageCount(this.objectModel.getLanguages()?.length!)
+            .setLanguageCount(this.objectModel.getLanguages().length!)
         
-        this.objectModel?.setRepoStats(repoStats);
+        this.objectModel.setRepoStats(repoStats);
         return this;
     }
 }

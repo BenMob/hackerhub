@@ -18,7 +18,7 @@ class Repo extends AbstractObjectModel{
     private createdAt: AbstractObjectModel | null = null;
     private pushedAt: AbstractObjectModel | null = null;
     private updatedAt: AbstractObjectModel | null = null;
-    private languages: Array<AbstractObjectModel> | null = null;
+    private languages: Array<AbstractObjectModel> = [];
     private repoStats: AbstractStats | null = null;
 
     /*
@@ -119,7 +119,7 @@ class Repo extends AbstractObjectModel{
         return this.pushedAt as DateObject;
     }
 
-    public getLanguages(): Array<Language> | null{
+    public getLanguages(): Array<Language> {
         return this.languages as Array<Language>;
     }
 
