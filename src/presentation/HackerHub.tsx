@@ -5,18 +5,19 @@ import colors from "./styles/language-colors.json"
  * @returns 
  */
 function HackerHub(): JSX.Element{
-    const style = {
-        borderRadius: '2px',
-        padding: '2px',
-        margin: '2px',
-        width: '450px',
-        height: '300px',
-        backgroundColor: `${colors.TypeScript}`
-    }
 
+    const langs = []
+    for (const [key, value] of Object.entries(colors)) {
+        langs.push({name: key, color: value})
+    }
+    
 
     return(
-        <h1 style={style} >Welcome To HackerHub</h1>
+        <div>
+            {langs.map(lang => {
+                return <div style={{background: lang.color, padding: 10}}>{lang.name}</div>
+            })}
+        </div>
     )
 }
 
