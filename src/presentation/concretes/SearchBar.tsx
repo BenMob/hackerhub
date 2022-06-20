@@ -6,7 +6,9 @@ function SearchBar() {
   return (
     <InputGroup w="">
       <Input 
-      pr="4.5rem" 
+      pr="3rem"
+      w="18rem"
+      size="md" 
       type="text" 
       focusBorderColor='gray.100'
       errorBorderColor='red.500'

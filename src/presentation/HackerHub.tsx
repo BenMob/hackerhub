@@ -2,7 +2,7 @@ import colors from "./styles/language-colors.json"
 import NavBarContainer from "./containers/NavBarContainer"
 import FooterContainer from "./containers/FooterContainer"
 import SearchBarContainer from "./containers/SearchBarContainer"
-import AccountContainer from "./containers/AccountContainer"
+import AccountContainer from "./containers/AccountDetailsContainer"
 import { Grid, GridItem } from "@chakra-ui/react"
 
 /**

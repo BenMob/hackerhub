@@ -1,0 +1,6 @@
+{
+  "githubUserAPI": "Github Users API",
+  "githubUserAPIURL": "https://docs.github.com/en/rest/users",
+  "chartLibrary": "React-Vis Library",
+  "chartLibraryURL": "https://uber.github.io/react-vis"
+}

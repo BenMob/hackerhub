@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import { Box, Flex, Heading, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Heading, Link, Spacer } from "@chakra-ui/react";
 
 function Navbar() {
   return (
@@ -12,9 +12,9 @@ function Navbar() {
       </Box>
       <Spacer />
       <Box fontSize="25">
-        <a href="https://github.com/BenMob/hackerhub" target={"_blank"} data-testid="github-icon-link">
+        <Link href="https://github.com/BenMob/hackerhub" data-testid="github-icon-link" isExternal>
           <FontAwesomeIcon cursor="pointer" icon={faGithub} data-testid="github-icon" />
-        </a>
+        </Link>
       </Box>
     </Flex>
   )
