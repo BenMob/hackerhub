@@ -20,8 +20,6 @@
     "noEmit": false,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-, "test"  ],
+  "include": ["src", "test", "index.d.ts"],
   "exclude": ["node_modules"]
 }
