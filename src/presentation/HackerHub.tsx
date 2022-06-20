@@ -28,16 +28,4 @@ function HackerHub(): JSX.Element{
     )
 }
 
-const rootStyle: Object = {
-    minHeight: "100vh",
-    display: "grid",
-    gridTemplateRows: "60px auto 50px"
-}
-
-const contentStyle: Object = {
-    display: "grid",
-    gridTemplateRows: "70px auto"
-}
-
-
 export default HackerHub
