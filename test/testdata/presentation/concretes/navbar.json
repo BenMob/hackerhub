@@ -1,6 +1,5 @@
 {
-  "headingName": "Hackerhub",
   "githubLink": "https://github.com/BenMob/hackerhub",
-  "githubIconAnchorTID": "github-icon-anchor",
-  "githubIconTID": "github-icon"
+  "appLogoTID": "app-logo",
+  "githubIconLinkTID": "github-icon-link"
 }

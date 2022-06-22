@@ -10,14 +10,14 @@ function Navbar(props: NavBarPorps) {
   return (
     <Flex alignItems="center" minW="100%" padding="2">
       <Box userSelect="none">
-        <Heading cursor="pointer" as='h4' size='lg' role="heading" onClick={() => props.appLogoClickHandler()}>
+        <Heading cursor="pointer" as='h4' size='lg' onClick={() => props.appLogoClickHandler()} data-testid="app-logo">
           Hackerhub
         </Heading>
       </Box>
       <Spacer />
       <Box fontSize="25">
         <Link href="https://github.com/BenMob/hackerhub" data-testid="github-icon-link" isExternal>
-          <FontAwesomeIcon cursor="pointer" icon={faGithub} data-testid="github-icon" />
+          <FontAwesomeIcon  icon={faGithub} />
         </Link>
       </Box>
     </Flex>
