@@ -1,10 +1,10 @@
 import { Flex } from "@chakra-ui/react"
-import SearchBar from "../concretes/SearchBar"
+import SearchBar, {SearchBarPops} from "../concretes/SearchBar"
 
-function SearchBarContainer() {
+function SearchBarContainer(props: SearchBarPops) {
   return (
     <Flex justifyContent="center" alignItems="center" bg="gray.800">
-      <SearchBar />
+      <SearchBar inputHandler={props.inputHandler} />
     </Flex>
   )
 }

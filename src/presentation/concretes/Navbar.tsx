@@ -2,11 +2,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { Box, Flex, Heading, Link, Spacer } from "@chakra-ui/react";
 
-function Navbar() {
+export interface NavBarPorps{
+  appLogoClickHandler: Function;
+}
+
+function Navbar(props: NavBarPorps) {
   return (
     <Flex alignItems="center" minW="100%" padding="2">
       <Box userSelect="none">
-        <Heading as='h4' size='lg' role="heading">
+        <Heading cursor="pointer" as='h4' size='lg' role="heading" onClick={() => props.appLogoClickHandler()}>
           Hackerhub
         </Heading>
       </Box>

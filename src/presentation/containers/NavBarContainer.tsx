@@ -1,11 +1,11 @@
 
 import { Flex } from '@chakra-ui/react'
-import Navbar from '../concretes/Navbar'
+import Navbar, { NavBarPorps} from '../concretes/Navbar'
 
-function NavBarContainer() {
+function NavBarContainer(props: NavBarPorps) {
   return (
     <Flex bg="gray.800" color="gray.100" alignItems='center'  p='2' borderBottom="solid 3px" borderBottomColor="red.400" >
-      <Navbar />
+      <Navbar appLogoClickHandler={() => props.appLogoClickHandler()} />
     </Flex>
   )
 }
